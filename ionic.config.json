@@ -1,0 +1,8 @@
+{
+  "name": "Klassic",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular",
+  "pro_id": "01d1c344"
+}

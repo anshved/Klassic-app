@@ -9,22 +9,22 @@
 <ion-content padding>
   <ion-item>
     <ion-label floating>Item Name</ion-label>
-    <ion-input type="text"></ion-input>
+    <ion-input type="text" [(ngModel)]="stockList.itemName" ></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label floating>Item Colour</ion-label>
-    <ion-input type="text"></ion-input>
+    <ion-input type="text" [(ngModel)]="stockList.itemColour"></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label floating>Item Size</ion-label>
-    <ion-input type="text"></ion-input>
+    <ion-input type="text" [(ngModel)]="stockList.itemSize"></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label floating>Item Quantity</ion-label>
-    <ion-input type="text"></ion-input>
+    <ion-input type="text" [(ngModel)]="stockList.itemQuantity"></ion-input>
   </ion-item>
   <br>
   <ion-list radio-group>
@@ -39,6 +39,6 @@
   </ion-list>
   <br>
   <ion-buttons end>
-    <button ion-button>Add Item</button>
+    <button ion-button (click)="addItem(stockList)" >Add Item</button>
   </ion-buttons>
 </ion-content>

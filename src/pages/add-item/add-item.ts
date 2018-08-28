@@ -2,6 +2,7 @@ import { Component } from "@angular/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
 import { StockList } from "../../models/stock-list.iterface";
 import { AngularFireDatabase } from "angularfire2/database";
+import { HomePage } from "../home/home";
 @IonicPage()
 @Component({
   selector: "page-add-item",
@@ -23,5 +24,7 @@ export class AddItemPage {
 this.stockListRef$.push(stockList).then(() =>{
   console.log("succsessfully pushed");
 });
+
+this.navCtrl.pop()
   }
 }

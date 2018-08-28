@@ -12,5 +12,11 @@
 </ion-header>
 
 <ion-content padding>
-
+    <ion-list>
+        <ion-item *ngFor="let item of stockList | async">
+           {{ item.itemName }}
+        </ion-item>
+    </ion-list>
 </ion-content>
+
+

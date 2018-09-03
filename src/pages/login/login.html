@@ -1,7 +1,7 @@
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>login</ion-title>
+  <ion-navbar color="header">
+    <ion-title>Klassic Dresswala Login</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -9,16 +9,18 @@
 
 <ion-content padding>
   <ion-item>
-    <ion-label floating>Email</ion-label>
+    <ion-label color="header" floating>Email</ion-label>
     <ion-input [(ngModel)]="user.email" type="email"></ion-input>
   </ion-item>
 
   <ion-item>
-    <ion-label floating>Password</ion-label>
+    <ion-label color="header" floating>Password</ion-label>
     <ion-input [(ngModel)]="user.password" type="password"></ion-input>
   </ion-item>
 
 
   <!-- <button ion-button (click)="register()">Register</button> -->
-  <button ion-button (click)="login(user)">Login</button>
+  <ion-buttons end padding>
+  <button ion-button color="header" (click)="login(user)">Login</button>
+</ion-buttons>
 </ion-content>

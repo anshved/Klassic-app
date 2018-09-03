@@ -12,11 +12,25 @@
 </ion-header>
 
 <ion-content padding>
-    <ion-list>
-        <ion-item *ngFor="let item of stockList | async">
-           {{ item.itemName }}
+  <div>
+    <ion-searchbar [(ngModel)]="itemName" (input)="searchBar()"></ion-searchbar>
+  </div>
+    <ion-list *ngIf="!searchResults.length">
+        <ion-item *ngFor="let item of stockList | async" (click)="selectStockList(item)">
+           <h2>Name: {{ item.itemName }}</h2>
+           <h3>Size: {{ item.itemSize }}</h3>
+           <h3>Colour: {{ item.itemColour}}</h3>
+           <h3>Quantity: {{ item.itemQuantity }}</h3>
         </ion-item>
     </ion-list>
+    <ion-list *ngIf="searchResults.length">
+      <ion-item *ngFor="let item of searchResults" (click)="selectStockList(item)">
+         <h2>Name: {{ item.itemName }}</h2>
+         <h3>Size: {{ item.itemSize }}</h3>
+         <h3>Colour: {{ item.itemColour}}</h3>
+         <h3>Quantity: {{ item.itemQuantity }}</h3>
+      </ion-item>
+  </ion-list>
 </ion-content>
 
 

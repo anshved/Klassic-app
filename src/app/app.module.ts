@@ -13,6 +13,7 @@ import { AngularFireModule } from "angularfire2";
 import {AngularFireAuthModule, AngularFireAuth} from 'angularfire2/auth';
 import { AngularFireDatabaseModule } from "angularfire2/database";
 import { AddItemPage } from '../pages/add-item/add-item';
+import { EditItemPage } from '../pages/edit-item/edit-item';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AddItemPage } from '../pages/add-item/add-item';
     HomePage,
     LoginPage,
     RegisterPage,
-    AddItemPage
+    AddItemPage,
+    EditItemPage
   ],
   imports: [
     BrowserModule,
@@ -36,7 +38,8 @@ import { AddItemPage } from '../pages/add-item/add-item';
     HomePage,
     LoginPage,
     RegisterPage,
-    AddItemPage
+    AddItemPage,
+    EditItemPage
   ],
   providers: [
     StatusBar,

@@ -3,7 +3,8 @@ import {
   NavController,
   ActionSheet,
   ActionSheetController,
-  Item
+  Item,
+  ToastController
 } from "ionic-angular";
 import { AddItemPage } from "../add-item/add-item";
 import {
@@ -26,12 +27,13 @@ export class HomePage {
   stockList: Observable<any[]>;
   books: any;
   itemName: any;
-  searchResults = []
+  searchResults = [];
 
   constructor(
     public navCtrl: NavController,
     private database: AngularFireDatabase,
-    private actionSheetCtrl: ActionSheetController
+    private actionSheetCtrl: ActionSheetController,
+    private toastCtrl: ToastController
   ) {
     this.stockListRef$ = this.database.list("stockList");
     this.stockList = this.database
@@ -59,7 +61,21 @@ export class HomePage {
             text: "Delete",
             role: "destructive",
             handler: () => {
-              this.stockListRef$.remove(stockList.key);
+              this.stockListRef$.remove(stockList.key).then(() => {
+                {
+                  let toast = this.toastCtrl.create({
+                    message: "Item was deleted successfully",
+                    duration: 3000,
+                    position: "top"
+                  });
+
+                  toast.onDidDismiss(() => {
+                    console.log("Dismissed toast");
+                  });
+
+                  toast.present();
+                }
+              });
             }
           },
           {
@@ -79,7 +95,6 @@ export class HomePage {
   }
 
   searchBar() {
-
     this.database
       .object("stockList")
       .valueChanges()
@@ -87,11 +102,11 @@ export class HomePage {
         this.books = Object.keys(data).map(key => {
           return data[key];
         });
-         var options = {
+        var options = {
           keys: ["itemName"]
         };
         var fuse = new Fuse(this.books, options);
-    
+
         this.searchResults = fuse.search(this.itemName);
       });
   }

@@ -1,7 +1,7 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="header" >
     <ion-title>
-      Stock
+      Klassic Dresswala
     </ion-title>
     <ion-buttons end>
       <button ion-button icon-only (click)="navigateToAddItemPage()">
@@ -9,12 +9,15 @@
       </button>
       </ion-buttons>
   </ion-navbar>
-</ion-header>
-
-<ion-content padding>
-  <div>
+  <div class="color">
     <ion-searchbar [(ngModel)]="itemName" (input)="searchBar()"></ion-searchbar>
   </div>
+</ion-header>
+
+<ion-content>
+  <!-- <div>
+    <ion-searchbar [(ngModel)]="itemName" (input)="searchBar()"></ion-searchbar>
+  </div> -->
     <ion-list *ngIf="!searchResults.length">
         <ion-item *ngFor="let item of stockList | async" (click)="selectStockList(item)">
            <h2>Name: {{ item.itemName }}</h2>

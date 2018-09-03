@@ -6,7 +6,7 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="header">
     <ion-title>{{ stockItem.itemName}}</ion-title>
   </ion-navbar>
 
@@ -14,38 +14,38 @@
 
 
 <ion-content padding>
-  <ion-item>
-    <ion-label  floating>Item Name</ion-label>
+  <ion-item >
+    <ion-label color="header" floating>Item Name</ion-label>
     <ion-input type="text" [(ngModel)]="stockItem.itemName"></ion-input>
   </ion-item>
 
   <ion-item>
-    <ion-label floating>Item Colour</ion-label>
+    <ion-label color="header" floating>Item Colour</ion-label>
     <ion-input type="text" [(ngModel)]="stockItem.itemColour"></ion-input>
   </ion-item>
 
   <ion-item>
-    <ion-label floating>Item Size</ion-label>
+    <ion-label color="header" floating>Item Size</ion-label>
     <ion-input type="text" [(ngModel)]="stockItem.itemSize"></ion-input>
   </ion-item>
 
   <ion-item>
-    <ion-label floating>Item Quantity</ion-label>
-    <ion-input type="text" [(ngModel)]="stockItem.itemQuantity"></ion-input>
+    <ion-label color="header" floating>Item Quantity</ion-label>
+    <ion-input color="header" type="text" [(ngModel)]="stockItem.itemQuantity"></ion-input>
   </ion-item>
   <br>
   <ion-list [(ngModel)]="stockItem.radioItem" radio-group>
     <ion-item>
-      <ion-label>Boys</ion-label>
-      <ion-radio value="boys"></ion-radio>
+      <ion-label color="header">Boys</ion-label>
+      <ion-radio color="header" value="boys"></ion-radio>
     </ion-item>
     <ion-item>
-      <ion-label>Girls</ion-label>
-      <ion-radio value="girls"></ion-radio>
+      <ion-label color="header">Girls</ion-label>
+      <ion-radio color="header" value="girls"></ion-radio>
     </ion-item>
   </ion-list>
   <br>
   <ion-buttons end>
-    <button ion-button (click)="editItem(stockItem)">Edit Item</button>
+    <button class="color" ion-button (click)="editItem(stockItem)">Edit Item</button>
   </ion-buttons>
 </ion-content>

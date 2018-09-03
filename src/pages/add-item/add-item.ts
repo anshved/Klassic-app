@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { IonicPage, NavController, NavParams } from "ionic-angular";
+import { IonicPage, NavController, NavParams, ToastController } from "ionic-angular";
 import { StockList } from "../../models/stock-list.iterface";
 import { AngularFireDatabase } from "angularfire2/database";
 @IonicPage()
@@ -15,6 +15,7 @@ export class AddItemPage {
     public navCtrl: NavController,
     public navParams: NavParams,
     private database: AngularFireDatabase,
+    private toastCtrl: ToastController
     
   ) {
     this.stockListRef$ = this.database.list("stockList")
@@ -22,9 +23,8 @@ export class AddItemPage {
   }
 
   addItem(stockList: StockList){
-this.stockListRef$.push(stockList).then(() =>{
-  console.log("succsessfully pushed");
-});
+this.stockListRef$.push(stockList);
+
 
 this.navCtrl.pop();
   }

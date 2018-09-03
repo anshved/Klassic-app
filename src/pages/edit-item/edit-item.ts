@@ -33,6 +33,7 @@ export class EditItemPage {
 
   editItem(stock) {
     this.database.object(`stockList/${this.stockListId}`).update(stock);
+    this.navCtrl.pop();
   }
 }
 

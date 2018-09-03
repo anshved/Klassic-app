@@ -21,6 +21,7 @@
            <h3>Size: {{ item.itemSize }}</h3>
            <h3>Colour: {{ item.itemColour}}</h3>
            <h3>Quantity: {{ item.itemQuantity }}</h3>
+           <h3>Boys/Girls: {{ item.radioItem }}</h3>
         </ion-item>
     </ion-list>
     <ion-list *ngIf="searchResults.length">
@@ -29,6 +30,7 @@
          <h3>Size: {{ item.itemSize }}</h3>
          <h3>Colour: {{ item.itemColour}}</h3>
          <h3>Quantity: {{ item.itemQuantity }}</h3>
+         <h3>Boys/Girls: {{ item.radioItem }}</h3>
       </ion-item>
   </ion-list>
 </ion-content>

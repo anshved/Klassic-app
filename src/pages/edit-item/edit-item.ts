@@ -48,5 +48,6 @@ export class EditItemPage {
       }
     }) ;
     this.navCtrl.pop();
+    
   }
 }

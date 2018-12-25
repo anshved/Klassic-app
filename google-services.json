@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "130704708470",
+    "firebase_url": "https://klassic-51589.firebaseio.com",
+    "project_id": "klassic-51589",
+    "storage_bucket": "klassic-51589.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:130704708470:android:9f667adf79a733bc",
+        "android_client_info": {
+          "package_name": "com.ansh.klassic"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "130704708470-kuhersbrsud2jjf44qcb8spg42iid800.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnQmPsT0IzkJ72z7HAqfj0SZEpHPaZu3I"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

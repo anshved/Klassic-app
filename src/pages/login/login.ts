@@ -9,6 +9,7 @@ import {
 import { User } from "../../models/user";
 import { AngularFireAuth } from "angularfire2/auth";
 import { HomePage } from "../home/home";
+import { FcmProvider } from "../../providers/fcm/fcm";
 
 /**
  * Generated class for the LoginPage page.
@@ -30,7 +31,8 @@ export class LoginPage {
     public navParams: NavParams,
     private afAuth: AngularFireAuth,
     private toastCtrl: ToastController,
-    public alertCtrl: AlertController
+    public alertCtrl: AlertController,
+    public fcmService: FcmProvider
   ) {}
 
   async login(user: User) {
@@ -38,6 +40,7 @@ export class LoginPage {
       const result = this.afAuth.auth
         .signInWithEmailAndPassword(user.email, user.password)
         .then(() => {
+          this.fcmService.getToken();
           this.navCtrl.setRoot(HomePage).then(() => {
             {
               let toast = this.toastCtrl.create({

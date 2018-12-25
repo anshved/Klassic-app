@@ -14,9 +14,10 @@ import {
 } from "angularfire2/database";
 import * as Fuse from "fuse.js";
 import { Observable } from "rxjs";
-import { map } from "rxjs/operators";
+import { map, tap } from "rxjs/operators";
 import { StockList } from "../../models/stock-list.iterface";
 import { EditItemPage } from "../edit-item/edit-item";
+import { FcmProvider } from "../../providers/fcm/fcm";
 
 @Component({
   selector: "page-home",
@@ -33,7 +34,8 @@ export class HomePage {
     public navCtrl: NavController,
     private database: AngularFireDatabase,
     private actionSheetCtrl: ActionSheetController,
-    private toastCtrl: ToastController
+    private toastCtrl: ToastController,
+    public fcm: FcmProvider
   ) {
     this.stockListRef$ = this.database.list("stockList");
     this.stockList = this.database
@@ -44,6 +46,21 @@ export class HomePage {
           changes.map(c => ({ key: c.payload.key, ...c.payload.val() }))
         )
       );
+  }
+
+  ionViewDidLoad(){
+    this.fcm.getToken()
+
+    this.fcm.listenToNotifications().pipe(
+      tap(msg => {
+        const toast = this.toastCtrl.create({
+          message: msg.body,
+          duration: 3000
+        });
+        toast.present();
+      })
+    )
+    .subscribe()
   }
 
   selectStockList(stockList: StockList) {

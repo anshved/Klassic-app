@@ -21,6 +21,7 @@
     "@angular/platform-browser": "5.2.11",
     "@angular/platform-browser-dynamic": "5.2.11",
     "@ionic-native/core": "~4.11.0",
+    "@ionic-native/firebase": "^4.17.0",
     "@ionic-native/push": "^4.12.2",
     "@ionic-native/splash-screen": "~4.11.0",
     "@ionic-native/status-bar": "~4.11.0",
@@ -29,16 +30,16 @@
     "angularfire2": "^5.0.0-rc.12",
     "cordova-android": "7.0.0",
     "cordova-plugin-device": "^2.0.2",
+    "cordova-plugin-firebase": "^2.0.5",
     "cordova-plugin-ionic-keyboard": "^2.1.2",
     "cordova-plugin-ionic-webview": "^2.1.0",
     "cordova-plugin-splashscreen": "^5.0.2",
     "cordova-plugin-whitelist": "^1.3.3",
-    "firebase": "^5.4.1",
+    "firebase": "^5.5.9",
     "fuse.js": "^3.2.1",
     "ionic-angular": "3.9.2",
     "ionic-native": "^2.9.0",
     "ionicons": "3.0.0",
-    "phonegap-plugin-push": "^2.1.3",
     "promise-polyfill": "^8.1.0",
     "rxjs": "^6.2.2",
     "rxjs-compat": "^6.2.2",
@@ -57,10 +58,7 @@
       "cordova-plugin-splashscreen": {},
       "cordova-plugin-ionic-webview": {},
       "cordova-plugin-ionic-keyboard": {},
-      "phonegap-plugin-push": {
-        "SENDERID": "130704708470",
-        "FCM_VERSION": "11.6.2"
-      }
+      "cordova-plugin-firebase": {}
     },
     "platforms": [
       "android"
